@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import {Themecontext} from './App'
 
 
 
@@ -6,15 +7,23 @@ import React from 'react'
 
 function Functioncontext() {
 
+    const darktheme = useContext(Themecontext)
+
+    const themestyles ={
+        backgroundColor: darktheme ? '#333' : '#ccc',
+        color: darktheme ? '#ccc' : '#333',
+        padding:'2 rem',
+        margin: '2rem'
+    }
 
 
   return (
 
 
-    <div>Functioncontext</div>
+    <div style = {themestyles}>Functioncontext</div>
 
 
-    
+
   )
 }
 
