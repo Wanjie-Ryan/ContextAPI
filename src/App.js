@@ -1,22 +1,15 @@
 import React, {useState} from 'react'
 import Functioncontext from './functioncontext'
+import { Themeprovider } from './context'
 
-
-export const Themecontext = React.createContext()
+// export const Themecontext = React.createContext()
 // creates a theme context which can be used in the rest of the app.
 
 
 function App() {
 
 
-  const [darktheme, setdarktheme] = useState(true)
-
-
-  function toggletheme(){
-
-    setdarktheme(prevdarktheme => !prevdarktheme)
-  }
-
+  
 
   return (
 
@@ -28,12 +21,11 @@ function App() {
         {/* all the components wrapped inside the Provider can access the data from the value */}
 
 
-      <Themecontext.Provider value ={darktheme}>
+      <Themeprovider>
 
-        <button onClick={toggletheme}>Toggle Theme.</button>
         <Functioncontext/>
 
-      </Themecontext.Provider>
+      </Themeprovider>
     
     
     
